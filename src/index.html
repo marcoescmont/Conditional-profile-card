@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Conditional profile card</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -19,8 +19,16 @@
         <label>Include Cover</label>
         <select class="picker" for="includeCover">
           <option value="">Include Cover</option>
-          <option value="true">True</option>
-          <option value="false">False</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+      </li>
+      <li>
+        <label>Include Picture</label>
+        <select class="picker" for="includePicture">
+          <option value="">Include Picture</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
         </select>
       </li>
       <li>
@@ -36,6 +44,15 @@
         <select class="picker" for="socialMediaPosition">
           <option value="position-left">Left</option>
           <option value="position-right">Right</option>
+        </select>
+      </li>
+      <li>
+        <label>S.M. Color</label>
+        <select class="picker" for="socialMediaColor">
+          <option value="Blue">Blue</option>
+          <option value="Red">Red</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Green">Green</option>
         </select>
       </li>
       <li>
@@ -57,7 +74,7 @@
       <li>
         <label>Role</label>
         <select class="picker" for="role">
-          <option value="">null</option>
+          <option value="">Select your role</option>
           <option value="Web Developer">Web Developer</option>
           <option value="Floor Planner">Floor Planner</option>
           <option value="Technical Writter">Technical Writter</option>
@@ -66,7 +83,7 @@
       <li>
         <label>City</label>
         <select class="picker" for="city">
-          <option value="">null</option>
+          <option value="">Select your city</option>
           <option value="Miami">Miami</option>
           <option value="Munich">Munich</option>
           <option value="Caracas">Caracas</option>
@@ -76,7 +93,7 @@
       <li>
         <label>Country</label>
         <select class="picker" for="country">
-          <option value="">null</option>
+          <option value="">Select your country</option>
           <option value="USA">USA</option>
           <option value="Germany">Germany</option>
           <option value="Canada">Canada</option>

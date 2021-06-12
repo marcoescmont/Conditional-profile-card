@@ -27,15 +27,17 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
+  let picture = `${variables.avatarURL}`;
+  if (variables.includePicture == false) picture = "<div class='photo'></div>";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
+          <img src="${picture}" class="photo" />
           <h1>${variables.name} ${variables.lastname}</h1>
           <h2>${variables.role}</h2>
-          <h3>${variables.city} ${variables.country}</h3>
-          <ul class="${variables.socialMediaPosition}">
+          <h3>${variables.city}, ${variables.country}</h3>
+          <ul class="${variables.socialMediaPosition} ${variables.socialMediaColor}">
             <li><a href="https://twitter.com/${variables.twitter}"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/${variables.github}"><i class="fa fa-github"></i></a></li>
             <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fa fa-linkedin"></i></a></li>
@@ -52,23 +54,26 @@ window.onload = function() {
   window.variables = {
     // if includeCover is true the algorithm should
     includeCover: true,
+    includePicture: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://www.ghd.com/en/about-us/resources/News-insights/Insights/digital/snowy-mountains.jpg",
     // this is the url for the profile avatar
     avatarURL:
       "https://lh3.googleusercontent.com/ogw/ADea4I47N15S6B30meSu5ynJK7PPZDX7rkOVth1OjVrAv_0=s83-c-mo",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
+    socialMediaColor: "Green",
     // social media usernames
     twitter: "",
     github: "",
     linkedin: "",
     instagram: "",
-    name: "",
-    lastname: "",
-    role: "",
-    country: "",
-    city: ""
+    name: "Pedro",
+    lastname: "Perez",
+    role: "Web Developer",
+    country: "Venezuela",
+    city: "Puerto Ordaz"
   };
   render(window.variables); //render the card for the first time
 
