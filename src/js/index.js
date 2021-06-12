@@ -28,7 +28,9 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   let picture = `${variables.avatarURL}`;
-  if (variables.includePicture == false) picture = "<div class='photo'></div>";
+  if (variables.includePicture == false)
+    picture =
+      "https://www.gravatar.com/avatar/d7465b8fce04fd17a376618ba1eb8ddc.jpg?d=https%3A//d2mcnjhkvrfuy2.cloudfront.net/static/images/avatar_default.png&s=128";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
